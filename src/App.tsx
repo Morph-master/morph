@@ -4,10 +4,10 @@ import {
   Box,
   Input,
   Button,
-  Heading,
   extendTheme,
   Text,
-  Image
+  Image,
+  useMediaQuery
 } from "@chakra-ui/react";
 import image1 from './assets/image1.jpeg';
 import image2 from './assets/image2.webp';
@@ -41,7 +41,7 @@ const theme = extendTheme({
 
 
 export const App = () => {
-
+  const [isLargerThan768] = useMediaQuery("(min-width: 768px)"); // [true, false]
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -74,7 +74,7 @@ export const App = () => {
           borderWidth={1}
           borderRadius={8}
           boxShadow="lg"
-          w="600px"
+          w={isLargerThan768 ? "600px" : "none"}
           backgroundColor={'rgba(255, 255, 255, 0.6)'}
         >
           <Flex justifyContent={'center'} mb={5}>
@@ -110,6 +110,7 @@ export const App = () => {
             h="100%"
             backgroundImage={`url(${imageUrl})`}
             backgroundSize="cover"
+            backgroundPosition={isLargerThan768 ? 'center' : 'none'}
             opacity={currentImageIndex === index ? 1 : 0}
             transition="opacity 1s ease-in-out"
             backdropFilter={'grayscale(0.5)'}

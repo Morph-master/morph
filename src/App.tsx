@@ -110,7 +110,7 @@ export const App = () => {
             h="100%"
             backgroundImage={`url(${imageUrl})`}
             backgroundSize="cover"
-            backgroundPosition={isLargerThan768 ? 'center' : 'none'}
+            backgroundPosition={isLargerThan768 ? 'none' : 'center'}
             opacity={currentImageIndex === index ? 1 : 0}
             transition="opacity 1s ease-in-out"
             backdropFilter={'grayscale(0.5)'}

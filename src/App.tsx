@@ -80,9 +80,9 @@ export const App = () => {
           <Flex justifyContent={'center'} mb={5}>
             <Image src={logo} width={'100px'} borderRadius={100} />
           </Flex>
-          <Text color={'black'} fontSize={'lg'} fontWeight={'500'}>Enter your number</Text>
+          <Text color={'black'} fontSize={'lg'} fontWeight={'500'}>Enter your Number</Text>
           <Input mb={4} size={'lg'} />
-          <Text color={'black'} fontSize={'lg'} fontWeight={'500'}>Enter your email</Text>
+          <Text color={'black'} fontSize={'lg'} fontWeight={'500'}>Enter your Email</Text>
           <Input mb={4} size={'lg'} />
           <Flex justifyContent={'center'} mt={5}>
             <Button colorScheme="blue" w={200} >Submit</Button>

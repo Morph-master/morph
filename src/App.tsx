@@ -85,7 +85,7 @@ export const App = () => {
           <Text color={'black'} fontSize={'lg'} fontWeight={'500'}>Enter your Email</Text>
           <Input mb={4} size={'lg'} />
           <Flex justifyContent={'center'} mt={5}>
-            <Button colorScheme="blue" w={200} >Submit</Button>
+            <Button colorScheme="blue" w={200}>Morph Today</Button>
           </Flex>
         </Box>
       </Flex>

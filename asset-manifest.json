@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/static/js/main.a6c968db.js",
-    "static/js/453.24a3c0dd.chunk.js": "/static/js/453.24a3c0dd.chunk.js",
-    "static/media/image1.jpeg": "/static/media/image1.4712ba0447c3aee53bff.jpeg",
-    "static/media/image2.webp": "/static/media/image2.f237293389b050569752.webp",
-    "static/media/image3.jpeg": "/static/media/image3.95b1f1e356fd92be4111.jpeg",
-    "static/media/morph.jpeg": "/static/media/morph.587a6c30d7573fc6eb3e.jpeg",
-    "index.html": "/index.html",
-    "main.a6c968db.js.map": "/static/js/main.a6c968db.js.map",
-    "453.24a3c0dd.chunk.js.map": "/static/js/453.24a3c0dd.chunk.js.map"
+    "main.js": "/morph/static/js/main.4d881c3b.js",
+    "static/js/453.24a3c0dd.chunk.js": "/morph/static/js/453.24a3c0dd.chunk.js",
+    "static/media/image1.jpeg": "/morph/static/media/image1.4712ba0447c3aee53bff.jpeg",
+    "static/media/image2.webp": "/morph/static/media/image2.f237293389b050569752.webp",
+    "static/media/image3.jpeg": "/morph/static/media/image3.95b1f1e356fd92be4111.jpeg",
+    "static/media/morph.jpeg": "/morph/static/media/morph.587a6c30d7573fc6eb3e.jpeg",
+    "index.html": "/morph/index.html",
+    "main.4d881c3b.js.map": "/morph/static/js/main.4d881c3b.js.map",
+    "453.24a3c0dd.chunk.js.map": "/morph/static/js/453.24a3c0dd.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.a6c968db.js"
+    "static/js/main.4d881c3b.js"
   ]
 }

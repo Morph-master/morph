@@ -14,6 +14,22 @@ import image2 from './assets/image2.webp';
 import image3 from './assets/image3.jpeg';
 import logo from './assets/morph.jpeg';
 import { useEffect, useState } from "react";
+import { initializeApp } from "firebase/app";
+import { getFirestore, collection, addDoc } from "firebase/firestore";
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://support.google.com/firebase/answer/7015592
+const firebaseConfig = {
+  apiKey: "AIzaSyB-rNLUa0mwMavrWs6erc9hNTg6sc11110",
+  authDomain: "morph-83184.firebaseapp.com",
+  projectId: "morph-83184",
+  storageBucket: "morph-83184.appspot.com",
+  messagingSenderId: "88787333686",
+  appId: "1:88787333686:web:04721354d44533ab82de97",
+  measurementId: "G-80C3YNK095"
+};
+
+
 
 const images = [
   image1,
@@ -44,6 +60,22 @@ export const App = () => {
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)"); // [true, false]
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const handleSave = async () => {
+    try {
+      const colRef = collection(db, 'contacts');
+      await addDoc(colRef, {
+        email: email,
+        number: phoneNumber,
+      });
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -81,11 +113,23 @@ export const App = () => {
             <Image src={logo} width={'100px'} borderRadius={100} />
           </Flex>
           <Text color={'black'} fontSize={'lg'} fontWeight={'500'}>Enter your Number</Text>
-          <Input mb={4} size={'lg'} />
+          <Input
+            value={phoneNumber}
+            mb={4}
+            size={'lg'}
+            onChange={(e) => {
+              setPhoneNumber(e.target.value);
+            }} />
           <Text color={'black'} fontSize={'lg'} fontWeight={'500'}>Enter your Email</Text>
-          <Input mb={4} size={'lg'} />
+          <Input
+            value={email}
+            mb={4}
+            size={'lg'}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }} />
           <Flex justifyContent={'center'} mt={5}>
-            <Button colorScheme="blue" w={200}>Morph Today</Button>
+            <Button colorScheme="blue" w={200} onClick={handleSave}>Morph Today</Button>
           </Flex>
         </Box>
       </Flex>
